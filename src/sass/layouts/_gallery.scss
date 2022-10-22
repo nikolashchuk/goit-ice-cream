@@ -1,0 +1,134 @@
+.gallery {
+  background-color: var(--main-light);
+  height: 106px;
+
+  .gallery__container {
+    position: relative;
+
+    .gallery__wrapper {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: -30px;
+    }
+
+    .gallery-slider {
+      margin-left: auto;
+      margin-right: auto;
+      width: 279px;
+
+      .slick-list {
+        border-radius: 7px;
+
+        transition: box-shadow var(--main-animation);
+
+        &:hover,
+        &:focus {
+          box-shadow: #f8d24e 0 20px 30px -10px;
+        }
+      }
+
+      .gallery__img {
+        width: 100%;
+      }
+    }
+  }
+
+  .slick-dots {
+    bottom: -40px;
+
+    li {
+      button:before {
+        color: #d9d9d9;
+        opacity: 1;
+        font-size: 12px;
+      }
+
+      &.slick-active button:before {
+        color: var(--main-background);
+        opacity: 1;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-arrow::before {
+    display: none;
+  }
+}
+
+// 768 +
+@include medium-min {
+  .gallery {
+    height: 0;
+
+    .gallery__container {
+      .gallery__wrapper {
+        top: -164px;
+
+        .gallery-slider {
+          margin-left: auto;
+          margin-right: auto;
+          width: 704px;
+
+          .slick-list {
+            border-radius: 18px;
+
+            &:hover,
+            &:focus {
+              box-shadow: #f8d24e 0 20px 30px -10px;
+            }
+          }
+
+          .gallery__img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 1200 +
+
+@include large-min {
+  .gallery {
+    height: 0;
+
+    .gallery__container {
+      .gallery__wrapper {
+        top: -94px;
+
+        .gallery-slider {
+          margin-left: auto;
+          margin-right: auto;
+          width: 1013px;
+
+          .slick-list {
+            border-radius: 24px;
+
+            &:hover,
+            &:focus {
+              box-shadow: #f8d24e 0 20px 30px -10px;
+            }
+          }
+        }
+
+        .gallery__img {
+          height: 422px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
